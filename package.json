@@ -1,0 +1,6 @@
+{
+  "name": "web_template",
+  "version": "1.0.0",
+  "description": "Vue preset template.",
+  "main": "prompts.js"
+}

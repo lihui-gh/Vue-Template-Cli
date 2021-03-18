@@ -1,0 +1,8 @@
+{
+  "useTaobaoRegistry": true,
+  "useConfigFiles": false,
+  "router": false,
+  "vuex": false,
+  "plugins": {},
+  "configs": {}
+}

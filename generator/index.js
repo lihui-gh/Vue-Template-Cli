@@ -37,22 +37,35 @@ module.exports = (api, options, rootOptions) => {
     }
   });
 
+  // 生成对应项目
+  api.render('../template/template_pc')
+
   // 判断模板样式
   if (options.style == '顶部导航栏模板') {
 
-    // 生成对应项目
-    api.render('../template/template_pc_horizontal')
-
+    //注入对应文件
+    api.render({
+      './src/views/layout/Logo.vue': '../template/template_pc_style/horizontal/layout/Logo.vue',
+      './src/views/layout/Breadcrumb.vue': '../template/template_pc_style/horizontal/layout/Breadcrumb.vue',
+      './src/views/layout/Index.vue': '../template/template_pc_style/horizontal/layout/Index.vue',
+      './src/views/layout/Menu.vue': '../template/template_pc_style/horizontal/layout/Menu.vue',
+      './src/views/layout/Navbar.vue': '../template/template_pc_style/horizontal/layout/Navbar.vue',
+      './src/views/layout/TreeFolder.vue': '../template/template_pc_style/horizontal/layout/TreeFolder.vue',
+      './src/router/index.js': '../template/template_pc_style/horizontal/router/index.js'
+    });
 
   } else if (options.style == '侧边导航栏模板') {
 
-    // 生成对应项目
-    api.render('../template/template_pc_vertical')
-
-    // 注入对应文件
-    // api.render({
-    //   './src/components/Head.vue': '../template/template_pc_style/HeadLeft.vue'
-    // });
+    //注入对应文件
+    api.render({
+      './src/views/layout/Logo.vue': '../template/template_pc_style/vertical/layout/Logo.vue',
+      './src/views/layout/Breadcrumb.vue': '../template/template_pc_style/vertical/layout/Breadcrumb.vue',
+      './src/views/layout/Index.vue': '../template/template_pc_style/vertical/layout/Index.vue',
+      './src/views/layout/Menu.vue': '../template/template_pc_style/vertical/layout/Menu.vue',
+      './src/views/layout/Navbar.vue': '../template/template_pc_style/vertical/layout/Navbar.vue',
+      './src/views/layout/TreeFolder.vue': '../template/template_pc_style/vertical/layout/TreeFolder.vue',
+      './src/router/index.js': '../template/template_pc_style/vertical/router/index.js'
+    });
 
   }
 }

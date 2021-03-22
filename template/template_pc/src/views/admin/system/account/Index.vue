@@ -137,7 +137,7 @@ export default {
     // ...mapGetters(["accountId"])
   },
   created() {
-    this.initData();
+    // this.initData();
   },
   methods: {
     // 加载数据

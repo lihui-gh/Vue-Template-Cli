@@ -7,7 +7,7 @@ import TokenFactory from './tokenFactory'; // get token from cookie
 
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
-const whiteList = ['/login', '/404', '/system/account', '/system/role']; // no redirect whitelist
+const whiteList = ['/login', '/404']; // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
   // start progress bar

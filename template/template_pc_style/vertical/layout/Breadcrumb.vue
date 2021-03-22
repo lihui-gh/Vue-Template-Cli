@@ -1,5 +1,9 @@
 <template>
-  <el-breadcrumb class="app-breadcrumb" separator="/">
+  <el-breadcrumb
+    class="app-breadcrumb"
+    :style="isCollapse ? { margin: '70px 20px 20px 104px' } : { margin: '70px 20px 20px 280px' }"
+    separator="/"
+  >
     <!-- <transition-group name="breadcrumb"> -->
     <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
       <span v-if="item.redirect==='noRedirect'||index==levelList.length-1" class="no-redirect">{{ item.meta.title }}</span>
@@ -11,12 +15,15 @@
 
 <script>
 import pathToRegexp from 'path-to-regexp';
-
+import { mapGetters } from 'vuex';
 export default {
   data() {
     return {
       levelList: null
     };
+  },
+  computed: {
+    ...mapGetters(['isCollapse'])
   },
   watch: {
     $route() {

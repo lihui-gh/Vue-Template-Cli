@@ -32,7 +32,8 @@ export const routes = [
         path: 'system',
         redirect: '/system/account',
         component: () => import('@/views/admin/system/Index.vue'),
-        meta: { title: '系统管理', power: 'system', style: 'el-icon-s-custom' },
+        // meta有可扩展属性 display: true，用于系统菜单对于非菜单路由的隐藏，isFirstNode表示一级菜单，用于菜单收缩时名字隐藏
+        meta: { title: '系统管理', power: 'system', style: 'el-icon-s-custom', isFirstNode: true },
         children: [
           {
             path: 'account',
@@ -50,9 +51,9 @@ export const routes = [
           // {
           //   path: 'log',
           //   component: () => import('@/views/admin/system/log/Index.vue'),
-          //   name: 'role',
+          //   name: 'log',
           //   meta: { title: '日志管理', power: 'log' }
-          // },
+          // }
         ]
       }
     ]

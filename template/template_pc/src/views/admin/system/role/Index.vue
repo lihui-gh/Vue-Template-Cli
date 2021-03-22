@@ -131,7 +131,7 @@ export default {
     // ...mapGetters(["permissions"])
   },
   created() {
-    this.initData();
+    // this.initData();
   },
   methods: {
     // 加载数据

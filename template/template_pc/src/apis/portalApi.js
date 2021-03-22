@@ -1,4 +1,3 @@
-
 /**
  * 用户鉴权相关Api
  *
@@ -16,7 +15,7 @@ export function login(data) {
 
 export function getInfo() {
   return request({
-    url: 'v1/getloginuser',
+    url: 'api/v1/getloginuser',
     method: 'get'
   });
 }

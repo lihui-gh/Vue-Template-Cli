@@ -4,12 +4,16 @@
     <navbar />
     <main-menu />
     <breadcrumb />
-    <router-view class="route_style" />
+    <router-view
+      class="route_style"
+      :style="isCollapse ? { margin: '30px 40px 40px 104px' } : { margin: '30px 40px 40px 280px' }"
+    />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import { mapGetters } from 'vuex';
 import Breadcrumb from './Breadcrumb.vue';
 import Menu from './Menu.vue';
 import Logo from './Logo.vue';
@@ -22,6 +26,9 @@ export default {
     'logo': Logo,
     'navbar': Navbar,
     'breadcrumb': Breadcrumb
+  },
+  computed: {
+    ...mapGetters(['isCollapse'])
   }
 };
 </script>
@@ -33,7 +40,7 @@ export default {
   // top: 0
 }
 .route_style {
-  margin: 30px 50px 40px 270px;
+  // margin: 30px 50px 40px 270px;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);

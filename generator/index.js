@@ -21,6 +21,7 @@ module.exports = (api, options, rootOptions) => {
       "path-to-regexp": "2.4.0",
       "sass-loader": "^9.0.3",
       "vue": "^2.6.11",
+      "vue-fragment": "^1.5.2",
       "vue-router": "^3.2.0",
       "vuex": "^3.4.0"
     },
@@ -64,7 +65,10 @@ module.exports = (api, options, rootOptions) => {
       './src/views/layout/Menu.vue': '../template/template_pc_style/vertical/layout/Menu.vue',
       './src/views/layout/Navbar.vue': '../template/template_pc_style/vertical/layout/Navbar.vue',
       './src/views/layout/TreeFolder.vue': '../template/template_pc_style/vertical/layout/TreeFolder.vue',
-      './src/router/index.js': '../template/template_pc_style/vertical/router/index.js'
+      './src/router/index.js': '../template/template_pc_style/vertical/router/index.js',
+      './src/store/modules/system.js': '../template/template_pc_style/vertical/store/modules/system.js',
+      './src/store/getters.js': '../template/template_pc_style/vertical/store/getters.js',
+      './src/store/index.js': '../template/template_pc_style/vertical/store/index.js',
     });
 
   }

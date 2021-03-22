@@ -11,16 +11,16 @@ import baseVueRouter from 'vue-router';
 Vue.use(baseVueRouter);
 
 /**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
+  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+  * for JavaScript based Bootstrap features such as modals and tabs. This
+  * code may be modified to fit the specific needs of your application.
+  */
 
 /**
- *
- * 导入ElementUI
- *
- */
+  *
+  * 导入ElementUI
+  *
+  */
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI, {
@@ -28,9 +28,12 @@ Vue.use(ElementUI, {
 });
 
 /**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
+  * We'll load the axios HTTP library which allows us to easily issue requests
+  * to our Laravel back-end. This library automatically handles sending the
+  * CSRF token as a header based on the value of the "XSRF" token cookie.
+  */
 
 window.axios = require('axios');
+
+import Fragment from 'vue-fragment';
+Vue.use(Fragment.Plugin);

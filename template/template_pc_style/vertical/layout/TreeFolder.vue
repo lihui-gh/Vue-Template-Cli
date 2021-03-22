@@ -1,25 +1,33 @@
 <template>
-  <div class="el-submenu">
-    <div v-for="route in routes" :key="route.path">
-      <!--      <el-submenu v-if="route.children" v-show="permission.includes(route.meta.power) && !route.meta.display" :index="fatherRoute + route.path">-->
-      <el-submenu v-if="route.children" :index="fatherRoute + route.path">
-        <span
+  <fragment>
+    <template v-for="route in routes">
+      <el-submenu
+        v-if="route.children"
+        v-show="permission.includes(route.meta.power) && !route.meta.display"
+        :key="route.path"
+        :index="fatherRoute + route.path"
+      >
+        <template
           slot="title"
-        ><i :class="route.meta.style" />{{ route.meta.title }}</span>
+        >
+          <i :class="route.meta.style" />{{ (isCollapse && route.meta.isFirstNode) ? '' :route.meta.title }}
+        </template>
 
         <tree-folder
           :routes="route.children"
           :father-route="fatherRoute + route.path + '/'"
         />
       </el-submenu>
-      <!--      <el-menu-item v-else v-show="permission.includes(route.meta.power) && !route.meta.display" :index="fatherRoute + route.path">{{-->
-      <!--        route.meta.title-->
-      <!--      }}</el-menu-item>-->
-      <el-menu-item v-else :index="fatherRoute + route.path"><i :class="route.meta.style" />{{
+      <el-menu-item
+        v-else
+        v-show="permission.includes(route.meta.power) && !route.meta.display"
+        :key="route.path"
+        :index="fatherRoute + route.path"
+      >{{
         route.meta.title
       }}</el-menu-item>
-    </div>
-  </div>
+    </template>
+  </fragment>
 </template>
 
 <script>
@@ -41,11 +49,12 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(['permission'])
+    ...mapGetters(['permission', 'isCollapse'])
   }
 
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+
 </style>

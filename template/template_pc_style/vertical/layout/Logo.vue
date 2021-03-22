@@ -1,11 +1,14 @@
 <template>
-  <div class="logo">
-    通用系统模板
+  <div
+    class="logo"
+    :style="isCollapse ? { width: '64px' } : { width: '240px' }"
+  >
+    {{ isCollapse ? '' : '通用系统模板' }}
   </div>
 </template>
 
 <script>
-
+import { mapGetters } from 'vuex';
 export default {
   name: 'Logo',
   components: {
@@ -16,12 +19,7 @@ export default {
     };
   },
   computed: {
-    activeMenu() {
-      const route = this.$route;
-      console.log(route);
-      const { path } = route;
-      return path;
-    }
+    ...mapGetters(['isCollapse'])
   }
 };
 </script>

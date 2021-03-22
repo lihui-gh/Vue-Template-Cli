@@ -1,19 +1,25 @@
 <template>
-  <div class="Menu">
-    <el-menu
-      :default-active="activeMenu"
-      class="el-menu-demo"
-      mode="vertical"
-      :router="true"
-      background-color="#304156"
-      text-color="#fff"
-      active-text-color="#409EFF"
-    >
 
-      <tree-folder :routes="routes" father-route="/" />
+  <div class="Menu" :style="isCollapse ? { width: '64px' } : { width: '240px' }">
+    <transition name="fade" mode="out-in">
+      <el-menu
+        :default-active="activeMenu"
+        :collapse="isCollapse"
+        class="el-menu-demo"
+        :show-timeout="200"
+        mode="vertical"
+        :router="true"
+        background-color="#304156"
+        text-color="#fff"
+        active-text-color="#409EFF"
+      >
 
-    </el-menu>
+        <tree-folder :routes="routes" father-route="/" />
+
+      </el-menu>
+    </transition>
   </div>
+
 </template>
 
 <script>
@@ -37,7 +43,7 @@ export default {
       const { path } = route;
       return path;
     },
-    ...mapGetters(['permission'])
+    ...mapGetters(['permission', 'isCollapse'])
   },
   created() {
     routes.forEach((route) => {
@@ -51,25 +57,25 @@ export default {
 </script>
 
 <style lang="scss">
-    .el-submenu__title:hover {
-        background-color: rgb(47, 49, 73) !important;
-    }
-    .el-menu-item:hover {
-        background-color: rgb(47, 49, 73) !important;
-    }
+  .el-submenu__title:hover {
+    background-color: rgb(47, 49, 73) !important;
+  }
+  .el-menu-item:hover {
+    background-color: rgb(47, 49, 73) !important;
+  }
 </style>
 
 <style lang="scss" scoped >
-    .Menu {
-        z-index: 999;
-        overflow: auto;
-        width: 240px;
-        height: calc(100% - 60px);
-        padding: 15px 0;
-        background: #304156;
-        position: fixed;
-        top: 60px;
-        left: 0;
-    }
+  .Menu {
+    z-index: 999;
+    overflow: auto;
+    width: 240px;
+    height: calc(100% - 60px);
+    padding: 15px 0;
+    background: #304156;
+    position: fixed;
+    top: 60px;
+    left: 0;
+  }
 </style>
 

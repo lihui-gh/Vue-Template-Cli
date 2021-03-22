@@ -33,7 +33,7 @@ const toLogin = () => {
   /** token校验失败后 ，清除token**/
   Vue.prototype.$message({
     type: 'error',
-    message: '登录超时，请重新登录。即将跳回登录页',
+    message: '登录超时，请重新登录。',
     duration: 2000,
     onClose: () => {
       window.location.href = '/#/login';

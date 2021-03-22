@@ -32,6 +32,7 @@ export const routes = [
         path: 'system',
         redirect: '/system/account',
         component: () => import('@/views/admin/system/Index.vue'),
+        // meta有可扩展属性 display: true，用于系统菜单对于非菜单路由的隐藏
         meta: { title: '系统管理', power: 'system' },
         children: [
           {

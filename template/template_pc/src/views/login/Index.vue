@@ -4,7 +4,7 @@
     <el-form ref="loginForm" class="login-form" :model="loginForm" :rules="loginRules" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">系统模板</h3>
+        <h3 class="title">EB昆明团队系统模板</h3>
       </div>
 
       <el-form-item prop="loginname">
@@ -38,7 +38,7 @@
           @keyup.enter.native="handleLogin"
         />
         <span class="show-pwd" @click="showPwd">
-          <i :class="passwordType === 'password' ? 'el-icon-view' : 'el-icon-c-scale-to-original'" style="color: #000" />
+          <i :class="passwordType === 'password' ? 'el-icon-lock' : 'el-icon-unlock'" style="color: #000" />
         </span>
       </el-form-item>
 
@@ -56,10 +56,8 @@ export default {
   data() {
     return {
       loginForm: {
-        loginname: '',
-        password: ''
-        // loginname: 'zouyan',
-        // password: '123456'
+        loginname: 'admin',
+        password: '123456'
       },
       loginRules: {
         loginname: [{ required: true, trigger: 'blur' }],
@@ -93,20 +91,20 @@ export default {
     },
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
-        this.$router.push({ path: 'system/role' });
-        // if (valid) {
-        //   this.loading = true;
-        //   this.$store.dispatch('user/login', this.loginForm).then(() => {
-        //     this.$router.push({ path: this.redirect || '/' });
-        //     this.loading = false;
-        //   }).catch(() => {
-        //     // this.$message.error(err.errmsg);
-        //     this.loading = false;
-        //   });
-        // } else {
-        //   console.log('error submit!!');
-        //   return false;
-        // }
+        // this.$router.push({ path: 'system/role' });
+        if (valid) {
+          this.loading = true;
+          this.$store.dispatch('user/login', this.loginForm).then(() => {
+            this.$router.push({ path: this.redirect || '/' });
+            this.loading = false;
+          }).catch(() => {
+            // this.$message.error(err.errmsg);
+            this.loading = false;
+          });
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
       });
     }
   }
@@ -176,7 +174,7 @@ $light_gray:rgb(255, 255, 255);
   width: 100%;
   display: flex;
   justify-content: center;
-  background-image: url("../../assets/bgimg/bg83.jpg");
+  background-image: url("../../assets/bgimg/bg10.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   overflow: hidden;

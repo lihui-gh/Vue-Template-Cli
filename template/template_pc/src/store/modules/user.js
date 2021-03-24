@@ -32,14 +32,9 @@ const actions = {
     const { loginname, password } = userInfo;
     return new Promise((resolve, reject) => {
       login({ username: loginname.trim(), password: password }).then(response => {
-        console.log(response, '6r78578');
-        if (response.code == 200) {
-          const { data } = response;
-          TokenFactory.setToken(data.token);
-          resolve();
-        } else {
-          reject(response.errmsg);
-        }
+        const { data } = response;
+        TokenFactory.setToken(data.token);
+        resolve();
       }).catch(error => {
         // console.log(error)
         reject(error);
@@ -96,4 +91,3 @@ export default {
   mutations,
   actions
 };
-

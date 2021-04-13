@@ -1,5 +1,9 @@
 'use strict';
 
+const path = require('path');
+const resolve = (dir) => {
+  return path.join(__dirname, './', dir);
+};
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
   /**
@@ -33,5 +37,23 @@ module.exports = {
         }
       }
     }
+  },
+  chainWebpack(config) {
+    // 配置svg
+    config.module
+      .rule('svg')
+      .exclude.add(resolve('src/assets/images/svg'))
+      .end();
+    config.module
+      .rule('icons')
+      .test(/\.svg$/)
+      .include.add(resolve('src/assets/images/svg'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
+      .end();
   }
 };

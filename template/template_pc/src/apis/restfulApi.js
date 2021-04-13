@@ -44,10 +44,9 @@ const restfulApi = {
     });
   },
 
-
   /**
      * Post
-     * 公共名称
+     * 通用名称
      * @param uri 必填
      * @param params 必填
      * @returns {*}

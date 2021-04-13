@@ -11,6 +11,7 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage({
     dependencies: {
       "stats-js": "^1.0.1",
+      "svg-sprite-loader": "^6.0.5",
       "axios": "0.18.1",
       "core-js": "^3.6.5",
       "element-ui": "2.13.0",

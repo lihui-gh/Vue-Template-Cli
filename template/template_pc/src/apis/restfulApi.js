@@ -44,12 +44,28 @@ const restfulApi = {
     });
   },
 
+
+  /**
+     * Post
+     * 公共名称
+     * @param uri 必填
+     * @param params 必填
+     * @returns {*}
+     */
+  post(uri, params) {
+    return request({
+      url: uri,
+      method: 'post',
+      data: params
+    });
+  },
+
   /**
      * 编辑
      * @param uri  必填
      * @param id  必填
      * @param params  必填
-     * @returns {IDBRequest | Promise<void>}
+     * @returns {*}
      */
   edit(uri, id, params) {
     return request({
@@ -70,6 +86,20 @@ const restfulApi = {
       url: uri + '/' + id,
       method: 'delete',
       data: ''
+    });
+  },
+
+  /**
+     * 批量删除
+     * @param uri  必填
+     * @param params  必填
+     * @returns {*}
+     */
+  deletes(uri, params) {
+    return request({
+      url: uri,
+      method: 'delete',
+      data: params
     });
   }
 };

@@ -174,7 +174,7 @@ $light_gray:rgb(255, 255, 255);
   width: 100%;
   display: flex;
   justify-content: center;
-  background-image: url("../../assets/bgimg/bg10.jpg");
+  background-image: url("../../assets/images/bgimg/bg10.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   overflow: hidden;

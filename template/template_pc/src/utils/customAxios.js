@@ -36,8 +36,8 @@ const toLogin = () => {
     message: '登录超时，请重新登录。',
     duration: 2000,
     onClose: () => {
-      window.location.href = '/#/login';
       TokenFactory.clearToken();
+      window.location.href = '/#/login';
       // window.location.reload();
     }
   });

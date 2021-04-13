@@ -10,8 +10,6 @@
       >添加</el-button>
     </el-row>
 
-    <svg-icon icon-class="dollar" style="color: red; font-size: 30px" />
-
     <el-row class="table-box">
       <el-table v-loading="tableLoading" :data="tableData" style="width: 100%">
         <el-table-column prop="ID" label="ID" width="80" />
@@ -288,6 +286,10 @@ export default {
 </script>
 
 <style scoped>
+.test-icon {
+  font-size: 60px;
+  color: aqua;
+}
 .add-btn {
   float: left;
 }

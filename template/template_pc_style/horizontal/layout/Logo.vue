@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    通用系统模板
+    <svg-icon icon-class="logo" class="logo-icon" />通用系统模板
   </div>
 </template>
 
@@ -39,5 +39,9 @@ export default {
   z-index: 999;
   height: 60px;
   background-color: #304156;
+  .logo-icon {
+    font-size: 18px;
+    margin-right: 4px;
+  }
 }
 </style>

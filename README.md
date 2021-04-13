@@ -4,7 +4,7 @@
 
 - 需先下载 vue-cli 4.0 及以上版本
 
-- 然后执行 vue create --preset http://git.ebiot.net:lihui/Template_Web --clone my-project（项目名）
+- 然后执行 vue create --preset lihui-gh/Vue-Template-Cli my-project（项目名）
 
 - 第一次使用可能会询问是否使用 taobao 镜像，选择是（Y）即可
 

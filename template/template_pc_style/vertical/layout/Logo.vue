@@ -3,7 +3,7 @@
     class="logo"
     :style="isCollapse ? { width: '64px' } : { width: '240px' }"
   >
-    <svg-icon icon-class="logo" class="logo-icon" />
+    <svg-icon name="logo" class="logo-icon" />
     {{ isCollapse ? '' : '通用系统模板' }}
   </div>
 </template>

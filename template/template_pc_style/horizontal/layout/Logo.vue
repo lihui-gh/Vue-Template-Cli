@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <svg-icon icon-class="logo" class="logo-icon" />通用系统模板
+    <svg-icon name="logo" class="logo-icon" />通用系统模板
   </div>
 </template>
 

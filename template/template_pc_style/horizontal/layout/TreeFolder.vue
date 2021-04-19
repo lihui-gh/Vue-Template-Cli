@@ -1,9 +1,10 @@
 <template>
-  <div class="el-submenu">
-    <div v-for="route in routes" :key="route.path">
+  <div>
+    <template v-for="route in routes">
       <el-submenu
         v-if="route.children"
         v-show="permission.includes(route.meta.power) && !route.meta.display"
+        :key="route.path"
         :index="fatherRoute + route.path"
       >
         <span
@@ -18,12 +19,12 @@
       <el-menu-item
         v-else
         v-show="permission.includes(route.meta.power) && !route.meta.display"
+        :key="route.path"
         :index="fatherRoute + route.path"
       >{{
         route.meta.title
       }}</el-menu-item>
-    </div>
-  </div>
+    </template></div>
 </template>
 
 <script>

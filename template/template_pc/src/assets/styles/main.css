@@ -30,15 +30,33 @@ body > .el-container {
 }
 
 /**--------------------顶部导航样式--------------------------**/
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
-  color: #333;
-  text-align: center;
+
+/* 水平样式 */
+.el-menu--horizontal > div > .el-submenu {
+  float: left;
+}
+/* 一级菜单的样式 */
+.el-menu--horizontal > div > .el-menu-item {
+  float: left;
+  height: 60px;
   line-height: 60px;
-  width: 100%;
-  position: fixed;
-  z-index: 0;
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  color: #909399;
+}
+/* 解决下拉三角图标 */
+.el-menu--horizontal > div > .el-submenu .el-submenu__icon-arrow {
+  position: static;
+  vertical-align: middle;
+  margin-left: 8px;
+  margin-top: -3px;
+}
+/* 解决无下拉菜单时 不对齐问题 */
+.el-menu--horizontal > div > .el-submenu .el-submenu__title {
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 2px solid transparent;
+  color: #909399;
 }
 
 /**--------------------左侧导航样式--------------------------**/

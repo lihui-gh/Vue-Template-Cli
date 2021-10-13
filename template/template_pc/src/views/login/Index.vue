@@ -1,10 +1,9 @@
 <template>
   <div class="login-container">
-    <div id="3d-container" style="position: absolute; height: 100%; width: 100%" />
     <el-form ref="loginForm" class="login-form" :model="loginForm" :rules="loginRules" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">EB昆明团队系统模板</h3>
+        <h3 class="title">系统模板@LH</h3>
       </div>
 
       <el-form-item prop="loginname">
